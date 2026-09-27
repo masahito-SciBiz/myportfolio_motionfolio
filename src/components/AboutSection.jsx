@@ -1,24 +1,10 @@
-import { memo, useState, lazy, Suspense } from 'react';
+import { memo } from 'react';
 import { Gsap } from '../utils/gsapAnimate';
-import { Trophy, ArrowUpRight, MapPin } from 'lucide-react';
-
-const HackathonDetailModal = lazy(() => import('./HackathonDetailModal'));
+import { MapPin } from 'lucide-react';
 
 /* ─────────────────────────────────────────
    Static data
    ───────────────────────────────────────── */
-const achievements = [
-  {
-    icon: Trophy,
-    rank: 'National',
-    category: 'Hackathon',
-    title: 'National Finalist',
-    event: 'Base Indonesia Hackathon 2025',
-    year: '2025',
-    description: 'Competed against top engineering teams nationwide, building a decentralized solution on the Base blockchain.',
-  },
-];
-
 const STATS = [
   { value: 'BUILD', label: 'Hands-on\nApproach' },
   { value: 'AI+WEB', label: 'Product\nStack' },
@@ -26,103 +12,16 @@ const STATS = [
 ];
 
 const CAPABILITIES = [
-  'Machine Learning / CV',
-  'Generative AI & LLMs',
-  'Full-Stack Delivery',
-  'Data Engineering',
+  'Prototype Development',
+  'AI Integration',
+  'Workflow Automation',
+  'Data Analysis',
 ];
-
-/* ─────────────────────────────────────────
-   Achievement Card
-   ───────────────────────────────────────── */
-const AchievementCard = ({ achievement, index, onClick }) => {
-  const Icon = achievement.icon;
-  return (
-    <Gsap.div
-      onClick={onClick}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.12 + index * 0.1, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -2 }}
-      className="group relative cursor-pointer rounded-[8px] overflow-hidden border border-black/[0.08] bg-[#FFFEFC] shadow-[0_4px_14px_rgba(0,0,0,0.03)] hover:border-black/14 hover:shadow-[0_10px_28px_rgba(0,0,0,0.06)] transition-all duration-300"
-    >
-      <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-lime-300/[0.16] blur-3xl opacity-35 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-br from-lime-200/[0.08] via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-      <div className="absolute inset-0 border border-black/[0.03] rounded-[8px] pointer-events-none" />
-
-      <div className="relative z-10 p-6 md:p-7">
-        {/* Top meta row */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-2">
-            {/* Category tag */}
-            <span className="font-mono text-[8.5px] uppercase tracking-[0.18em] text-black/45 border border-black/[0.1] px-2.5 py-1 rounded-[2px] bg-white/90 shadow-[0_1px_4px_rgba(0,0,0,0.03)]">
-              {achievement.category}
-            </span>
-            {/* Rank badge */}
-            {achievement.rank && (
-              <span className="font-mono text-[8.5px] font-bold uppercase tracking-[0.18em] bg-black text-white px-2.5 py-1 rounded-[2px]">
-                {achievement.rank}
-              </span>
-            )}
-          </div>
-          {/* Year */}
-          <span className="font-mono text-[11px] font-bold text-black/30 tabular-nums">{achievement.year}</span>
-        </div>
-
-        {/* Main content */}
-        <div className="flex items-start justify-between gap-5">
-          <div className="flex-1">
-            {/* Index + title */}
-            <div className="flex items-baseline gap-3 mb-3">
-              <span className="font-mono text-[10px] text-black/22 font-bold tabular-nums select-none border border-black/[0.08] px-1.5 py-0.5 rounded-[2px] leading-none">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <h3 className="font-display font-bold text-[24px] md:text-[29px] tracking-[-0.022em] text-black leading-[0.98]">
-                {achievement.title}
-              </h3>
-            </div>
-
-            {/* Event name */}
-            <p className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-black/40 ml-8 mb-4">
-              {achievement.event}
-            </p>
-
-            {/* Description */}
-            {achievement.description && (
-              <p className="text-[13px] text-black/58 font-light leading-[1.72] ml-8 max-w-[470px]">
-                {achievement.description}
-              </p>
-            )}
-          </div>
-
-          {/* Icon circle */}
-          <div className="shrink-0 w-11 h-11 rounded-full border border-black/[0.1] bg-white/95 shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex items-center justify-center group-hover:border-black/20 transition-all duration-300">
-            <Icon size={16} className="text-black/35 group-hover:text-black/55 transition-colors duration-300" />
-          </div>
-        </div>
-
-        {/* Footer CTA */}
-        <div className="mt-6 pt-5 border-t border-black/[0.07] flex items-center justify-between">
-          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/28">
-            Click to view details
-          </span>
-          <div className="flex items-center gap-1.5 text-black/38 group-hover:text-black transition-colors duration-300">
-            <span className="font-mono text-[9px] uppercase tracking-[0.16em] font-bold">Open Highlight</span>
-            <ArrowUpRight size={13} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" />
-          </div>
-        </div>
-      </div>
-    </Gsap.div>
-  );
-};
 
 /* ─────────────────────────────────────────
    Main Component
    ───────────────────────────────────────── */
 const AboutSection = memo(function AboutSection() {
-  const [showHackathonDetail, setShowHackathonDetail] = useState(false);
-
   return (
     <section id="about-section" className="py-20 md:py-28 w-full relative bg-[#FAF9F6] overflow-hidden">
 
@@ -173,7 +72,7 @@ const AboutSection = memo(function AboutSection() {
                   <source srcSet="/profilee.webp" type="image/webp" />
                   <img
                     src="/profilee.webp"
-                    alt="Firdaus Zickrian"
+                    alt="Masahito Kuramochi"
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover object-top grayscale-[25%] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -183,7 +82,7 @@ const AboutSection = memo(function AboutSection() {
                 {/* Name plate at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 px-5 pt-10 pb-4 bg-gradient-to-t from-black/65 via-black/30 to-transparent z-20">
                   <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-white/50 mb-0.5">Name</p>
-                  <p className="text-white font-bold text-[15px] tracking-wide leading-snug">Firdaus Zickrian</p>
+                  <p className="text-white font-bold text-[15px] tracking-wide leading-snug">Masahito Kuramochi</p>
                 </div>
 
                 {/* Corner brackets */}
@@ -207,7 +106,7 @@ const AboutSection = memo(function AboutSection() {
                 <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-black/32 mb-1.5">Location</p>
                 <div className="flex items-center gap-1.5">
                   <MapPin size={11} className="text-black/38 shrink-0" />
-                  <span className="text-[13px] font-bold text-black">Indonesia</span>
+                  <span className="text-[13px] font-bold text-black">Japan</span>
                 </div>
               </div>
             </div>
@@ -238,17 +137,17 @@ const AboutSection = memo(function AboutSection() {
             >
               {/* Eyebrow */}
               <p className="font-mono text-[9px] uppercase tracking-[0.28em] text-black/30 mb-5">
-                Based in Indonesia — Open to Work
+                Based in Japan — Available for Projects
               </p>
 
               {/* Main title */}
               <h2 className="font-display font-bold tracking-[-0.025em] leading-[1.08] text-black">
                 <span className="block text-[44px] sm:text-[56px] lg:text-[64px] xl:text-[72px]">
-                  AI Engineer
+                  研究者から、
                 </span>
 
                 <span className="block text-[22px] sm:text-[26px] lg:text-[30px] xl:text-[34px] font-medium tracking-[-0.01em] text-black/55 mt-2">
-                  with Full-Stack Product Delivery
+                  デジタルプロダクトの創り手へ。
                 </span>
               </h2>
             </Gsap.div>
@@ -276,10 +175,14 @@ const AboutSection = memo(function AboutSection() {
               className="space-y-4 text-[15px] md:text-[15.5px] font-light text-black/60 leading-[1.88] max-w-[580px]"
             >
               <p>
-                I'm <strong className="text-black font-semibold">Firdaus Zickrian</strong>, an AI Engineer focused on building intelligent systems that are not only innovative, but production-ready and measurable in real-world environments.
+                医学・生命科学分野で約20年、研究開発に携わってきました。
+                仮説を立て、データを集め、検証する。その経験を土台に、
+                現在はAIやWeb技術を使って、アイデアや課題を実際に動く形にしています。
               </p>
               <p>
-                I specialize in Computer Vision and LLM-powered products, with full-stack delivery as a supporting strength to move ideas from prototype to reliable digital products.
+                アプリや業務ツールの試作、業務自動化、データ分析など、
+                最初から大きく作るのではなく、小さく形にして試しながら、
+                本当に必要なものへ育てていくことを大切にしています。
               </p>
             </Gsap.div>
 
@@ -294,7 +197,7 @@ const AboutSection = memo(function AboutSection() {
               transition={{ delay: 0.18, duration: 0.75 }}
             >
               <p className="font-mono text-[9.5px] md:text-[10px] uppercase tracking-[0.22em] text-black/32 mb-4">
-                Core Focus & Supporting Skills
+                What I Work With
               </p>
               <div className="flex flex-wrap gap-2">
                 {CAPABILITIES.map((cap, i) => (
@@ -308,50 +211,9 @@ const AboutSection = memo(function AboutSection() {
               </div>
             </Gsap.div>
 
-            {/* Achievements */}
-            {achievements.length > 0 && (
-              <Gsap.div
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.22, duration: 0.75 }}
-                className="mt-14 md:mt-16"
-              >
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="w-[5px] h-[5px] rounded-full bg-lime-500 shrink-0" />
-                  <p className="font-mono text-[9.5px] md:text-[10px] uppercase tracking-[0.22em] text-black/40">
-                    Notable Achievements
-                  </p>
-                  <div className="flex-1 h-px bg-gradient-to-r from-black/[0.1] to-transparent" />
-                  <span className="font-mono text-[9px] font-bold border border-black/[0.1] bg-white px-2.5 py-1 rounded-[2px] text-black/35 tabular-nums">
-                    {achievements.length} Award{achievements.length !== 1 ? 's' : ''}
-                  </span>
-                </div>
-
-                <div className="flex flex-col gap-3">
-                  {achievements.map((achievement, index) => (
-                    <AchievementCard
-                      key={index}
-                      achievement={achievement}
-                      index={index}
-                      onClick={() => setShowHackathonDetail(true)}
-                    />
-                  ))}
-                </div>
-              </Gsap.div>
-            )}
-
           </div>
         </div>
       </div>
-
-      {/* Modal */}
-      <Suspense fallback={null}>
-        <HackathonDetailModal
-          isOpen={showHackathonDetail}
-          onClose={() => setShowHackathonDetail(false)}
-        />
-      </Suspense>
 
     </section>
   );
