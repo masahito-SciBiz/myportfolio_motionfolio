@@ -4,7 +4,7 @@ import { Terminal, Code2, Database, Cpu, Download, ArrowUpRight } from 'lucide-r
 
 // Shared Intl formatter — created once, reused on every tick
 const jakartaFormatter = new Intl.DateTimeFormat('en-US', {
-  timeZone: 'Asia/Jakarta',
+  timeZone: 'Asia/Tokyo',
   hour: '2-digit',
   minute: '2-digit',
   second: '2-digit',
@@ -30,7 +30,7 @@ const LocationTimeBadge = () => {
   return (
     <div className="flex items-center justify-center gap-3 sm:gap-5 font-mono text-xs uppercase tracking-[0.15em] text-black/50">
       <div className="flex items-center gap-2">
-        <span className="font-bold text-black/70">Based in Indonesia</span>
+        <span className="font-bold text-black/70">Based in Japan</span>
       </div>
       <div className="w-[1px] h-3 bg-black/15" />
       <div className="flex items-center gap-1.5 tabular-nums">
@@ -232,7 +232,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
             transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="text-[clamp(4.25rem,14vw,9rem)] font-black uppercase tracking-tight text-black leading-[0.88]"
           >
-            FIRDAUS
+            MASAHITO
           </Gsap.h1>
 
           <Gsap.h1
@@ -241,7 +241,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
             transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="text-[clamp(4.25rem,14vw,9rem)] font-black uppercase tracking-tight text-transparent leading-[0.88] mt-2 sm:mt-0 font-outline-fallback"
           >
-            ZICKRIAN
+            KURAMOCHI
           </Gsap.h1>
 
           {/* Right Decoration */}
@@ -257,10 +257,10 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           className="flex flex-col items-center gap-2 mt-0"
         >
           <h2 className="text-[clamp(1.35rem,4.2vw,2.25rem)] font-bold text-black/80 tracking-tight flex items-center justify-center flex-wrap gap-2 px-2">
-            Architecting <span className="bg-lime-400/30 px-2 rounded-md ring-1 ring-lime-500/20">Intelligent</span> Paradigms<span className="text-lime-500 font-extrabold -ml-1">.</span>
+            「こうなったら <span className="bg-lime-400/30 px-2 rounded-md ring-1 ring-lime-500/20">楽なのに</span>」を、実際に使える仕組みに。
           </h2>
           <p className="font-sans text-base text-black/60 max-w-xl leading-7 mt-2 px-4">
-            AI Engineer & Full-Stack Developer specializing in high-performance, scalable systems.
+            AI・デジタル活用｜アプリ・業務ツールの試作｜業務自動化｜データ分析
           </p>
         </Gsap.div>
 
@@ -275,7 +275,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
             onClick={() => document.getElementById('project-section')?.scrollIntoView({ behavior: 'smooth' })}
             className="group flex items-center gap-2 bg-black text-white px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider hover:bg-lime-400 hover:text-black transition-all duration-300 cursor-pointer"
           >
-            View Projects <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            PROJECTS <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
           <a
             href="/cv.pdf"
