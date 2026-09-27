@@ -86,7 +86,7 @@ export default function Home() {
       <Navbar />
       <HeroSection isRevealed={true} />
       <Suspense fallback={null}><MarqueeBanner /></Suspense>
-      <Suspense fallback={null}><AboutSection /></Suspense>
+      <Suspense fallback={null}><TechnicalCapabilities /></Suspense>
 
       <div id="project-section" ref={galleryRef} className="bg-neutral-900">
         <Suspense fallback={<div className="h-screen bg-neutral-900" />}>
@@ -94,10 +94,10 @@ export default function Home() {
         </Suspense>
       </div>
 
+      <Suspense fallback={null}><AboutSection /></Suspense>
       <Suspense fallback={null}><ProfessionalExperience /></Suspense>
       <Suspense fallback={null}><TechStack /></Suspense>
       <Suspense fallback={null}><GitHubStats /></Suspense>
-      <Suspense fallback={null}><TechnicalCapabilities /></Suspense>
       <Suspense fallback={null}><Footer /></Suspense>
     </div>
   );
