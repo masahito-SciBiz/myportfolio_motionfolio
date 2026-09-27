@@ -6,9 +6,9 @@ import { MapPin } from 'lucide-react';
    Static data
    ───────────────────────────────────────── */
 const STATS = [
-  { value: 'BUILD', label: 'Hands-on\nApproach' },
-  { value: 'AI+WEB', label: 'Product\nStack' },
-  { value: 'OPEN', label: 'To\nCollab' },
+  { value: '20Y+', label: 'Research\nBackground' },
+  { value: 'AI+WEB', label: 'Digital\nBuild' },
+  { value: 'REMOTE', label: 'Project\nBased' },
 ];
 
 const CAPABILITIES = [

@@ -1,15 +1,23 @@
 import { memo, useRef, useState, useEffect } from 'react';
 import { Gsap, useGsapInView } from '../utils/gsapAnimate';
-import { Cpu, Network, Eye, MessageSquare, Infinity, BarChart2, MonitorSmartphone } from 'lucide-react';
+import { Bot, Workflow, Blocks } from 'lucide-react';
 
 const CAPABILITIES = [
-  { title: 'Machine Learning', desc: 'Predictive modeling, regression, and algorithmic classification built for scale.', icon: BarChart2 },
-  { title: 'Deep Learning', desc: 'Neural architectures for complex pattern recognition and high-accuracy deployments.', icon: Network },
-  { title: 'Computer Vision', desc: 'Image processing, real-time object detection, and robust spatial analytics.', icon: Eye },
-  { title: 'NLP & GenAI', desc: 'Large language models, semantic analysis, and human-like conversational AI.', icon: MessageSquare },
-  { title: 'MLOps', desc: 'End-to-end model deployment frameworks, continuous monitoring, and automation.', icon: Infinity },
-  { title: 'Data Analysis', desc: 'Advanced statistical modeling, big data wrangling, and actionable visualizations.', icon: Cpu },
-  { title: 'Web Engineering', desc: 'Scalable full-stack systems with ultra-responsive, accessible interfaces.', icon: MonitorSmartphone },
+  {
+    title: 'Prototype',
+    desc: 'アイデアや要件を整理し、Webアプリや業務ツールとして小さく形にします。',
+    icon: Blocks
+  },
+  {
+    title: 'Automation',
+    desc: '繰り返し作業や情報の受け渡しを整理し、業務を自動化する仕組みを作ります。',
+    icon: Workflow
+  },
+  {
+    title: 'AI & Data',
+    desc: '生成AIやデータ分析を、実際の業務やプロダクトで使える形に組み込みます。',
+    icon: Bot
+  },
 ];
 
 const TechnicalCapabilities = memo(function TechnicalCapabilities() {
@@ -49,7 +57,7 @@ const TechnicalCapabilities = memo(function TechnicalCapabilities() {
         >
           <div className="w-8 h-[2px] bg-black" />
           <span className="font-mono text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] md:tracking-[0.26em] text-black">
-            06. Capabilities_Matrix
+            02 — What I Do
           </span>
           <div className="w-8 h-[2px] bg-black" />
         </Gsap.div>
@@ -63,8 +71,8 @@ const TechnicalCapabilities = memo(function TechnicalCapabilities() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-5xl sm:text-7xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.9] text-black"
           >
-            Technical <br />
-            <span className="text-black/20">Capabilities.</span>
+            What I <br />
+            <span className="text-black/20">Do.</span>
           </Gsap.h2>
         </div>
 
@@ -119,20 +127,6 @@ const TechnicalCapabilities = memo(function TechnicalCapabilities() {
             );
           })}
 
-          {/* Ghost Cell for layout balance on 4-col XL screens */}
-          {(() => {
-            const isGhostActive = activeIndex === CAPABILITIES.length;
-            return (
-              <div className={`flex border-r-2 border-b-2 border-black p-5 md:p-8 lg:p-10 min-h-[180px] md:min-h-[300px] lg:min-h-[340px] bg-transparent flex-col justify-center items-center text-center group/ghost hover:bg-[#0A0A0A] transition-colors duration-500 cursor-crosshair ${isGhostActive ? '!bg-[#0A0A0A]' : ''}`}>
-                <div className={`w-10 h-10 md:w-16 md:h-16 rounded-full border-2 border-black group-hover/ghost:border-lime-400 flex items-center justify-center mb-4 md:mb-6 animate-[spin_10s_linear_infinite] group-hover/ghost:animate-[spin_3s_linear_infinite] transition-all duration-500 ${isGhostActive ? '!border-lime-400 !animate-[spin_3s_linear_infinite]' : ''}`}>
-                  <div className={`w-1.5 h-1.5 md:w-2 md:h-2 bg-black group-hover/ghost:bg-lime-400 rounded-full transition-colors duration-500 ${isGhostActive ? '!bg-lime-400' : ''}`} />
-                </div>
-                <span className={`font-mono text-xs tracking-[0.14em] md:tracking-[0.2em] uppercase text-black font-bold group-hover/ghost:text-lime-400 transition-colors duration-500 ${isGhostActive ? '!text-lime-400' : ''}`}>
-                  Continuously<br />Evolving
-                </span>
-              </div>
-            );
-          })()}
         </Gsap.div>
 
       </div>
