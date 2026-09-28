@@ -13,10 +13,8 @@ const AboutSection = lazy(() => import('../components/AboutSection'));
 const Footer = lazy(() => import('../components/Footer'));
 
 const ProjectGallery = lazy(() => import('../components/ProjectGallery'));
-const GitHubStats = lazy(() => import('../components/GitHubStats'));
 const TechStack = lazy(() => import('../components/TechStack'));
 const NoiseOverlay = lazy(() => import('../components/NoiseOverlay'));
-const ProfessionalExperience = lazy(() => import('../components/ProfessionalExperience'));
 const TechnicalCapabilities = lazy(() => import('../components/TechnicalCapabilities'));
 
 export default function Home() {
@@ -95,9 +93,7 @@ export default function Home() {
       </div>
 
       <Suspense fallback={null}><AboutSection /></Suspense>
-      <Suspense fallback={null}><ProfessionalExperience /></Suspense>
       <Suspense fallback={null}><TechStack /></Suspense>
-      <Suspense fallback={null}><GitHubStats /></Suspense>
       <Suspense fallback={null}><Footer /></Suspense>
     </div>
   );

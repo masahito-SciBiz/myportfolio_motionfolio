@@ -4,85 +4,58 @@ import { Gsap } from "../utils/gsapAnimate";
 // Simple Icons (brand icons) from react-icons
 import {
     SiPython,
-    SiTensorflow,
-    SiPytorch,
-    SiKeras,
-    SiScikitlearn,
-    SiOpencv,
-    SiStreamlit,
     SiNumpy,
     SiPandas,
-    SiReact,
-    SiNextdotjs,
-    SiTailwindcss,
-    SiGreensock,
     SiJavascript,
     SiHtml5,
-    SiFastapi,
-    SiExpress,
-    SiPostgresql,
-    SiMysql,
     SiSupabase,
     SiDocker,
-
     SiGit,
     SiLinux,
 } from "react-icons/si";
 
 // Lucide icons for generic concepts
-import { Bot, BrainCircuit, Workflow, Globe, Cloud } from "lucide-react";
+import { Bot, Workflow, Globe, Cloud } from "lucide-react";
 
 const stackCategories = [
     {
-        title: "AI & Machine Learning",
-        description: "Intelligent systems & models",
+        title: "Build",
+        description: "Prototype & web tools",
         skills: [
-            { name: "Python", icon: SiPython },
-            { name: "TensorFlow", icon: SiTensorflow },
-            { name: "PyTorch", icon: SiPytorch },
-            { name: "Keras", icon: SiKeras },
-            { name: "Scikit-Learn", icon: SiScikitlearn },
-            { name: "OpenCV", icon: SiOpencv },
-            { name: "Streamlit", icon: SiStreamlit },
-            { name: "Numpy", icon: SiNumpy },
-            { name: "Pandas", icon: SiPandas },
-            { name: "RAG", icon: BrainCircuit },
-            { name: "LLM", icon: Bot },
-        ]
-    },
-    {
-        title: "Frontend Eng.",
-        description: "Interactive web interfaces",
-        skills: [
-            { name: "React", icon: SiReact },
-            { name: "Next.js", icon: SiNextdotjs },
-            { name: "Tailwind CSS", icon: SiTailwindcss },
-            { name: "GSAP", icon: SiGreensock },
+            { name: "HTML / CSS", icon: SiHtml5 },
             { name: "JavaScript", icon: SiJavascript },
-            { name: "HTML/CSS", icon: SiHtml5 },
-        ]
-    },
-    {
-        title: "Backend & API",
-        description: "Scalable server architectures",
-        skills: [
-            { name: "FastAPI", icon: SiFastapi },
-            { name: "ExpressJS", icon: SiExpress },
-            { name: "PostgreSQL", icon: SiPostgresql },
-            { name: "MySQL", icon: SiMysql },
+            { name: "FlutterFlow", icon: Globe },
             { name: "Supabase", icon: SiSupabase },
-            { name: "REST APIs", icon: Globe },
         ]
     },
     {
-        title: "DevOps & Cloud",
-        description: "Infrastructure & deployment",
+        title: "Automate",
+        description: "Workflow & integration",
         skills: [
+            { name: "Make", icon: Workflow },
+            { name: "n8n", icon: Workflow },
+            { name: "API Integration", icon: Globe },
+            { name: "Google Sheets", icon: Workflow },
+        ]
+    },
+    {
+        title: "AI & Data",
+        description: "AI integration & analysis",
+        skills: [
+            { name: "OpenAI API", icon: Bot },
+            { name: "Python", icon: SiPython },
+            { name: "Pandas", icon: SiPandas },
+            { name: "Data Analysis", icon: Bot },
+        ]
+    },
+    {
+        title: "Ship",
+        description: "Deploy & manage",
+        skills: [
+            { name: "Git / GitHub", icon: SiGit },
+            { name: "Netlify", icon: Cloud },
+            { name: "Cloudflare", icon: Cloud },
             { name: "Docker", icon: SiDocker },
-            { name: "Microsoft Azure", icon: Cloud },
-            { name: "MLOps", icon: Workflow },
-            { name: "Git", icon: SiGit },
-            { name: "Linux", icon: SiLinux },
         ]
     }
 ];
@@ -104,7 +77,7 @@ const TechStack = () => {
                 >
                     <div className="w-2 h-2 bg-lime-400 rounded-full" />
                     <span className="font-mono text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] md:tracking-[0.26em] text-white/40">
-                        04. Technical_Arsenal
+                        04. Skills
                     </span>
                     <div className="flex-1 h-[1px] bg-white/10" />
                 </Gsap.div>
@@ -121,8 +94,8 @@ const TechStack = () => {
                             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                             className="text-3xl sm:text-5xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.98] sm:leading-[0.95] text-white"
                         >
-                            Core <br />
-                            <span className="text-lime-400">Stack.</span>
+                            Tools I <br />
+                            <span className="text-lime-400">Work With.</span>
                         </Gsap.h2>
 
                         <Gsap.div
@@ -133,7 +106,7 @@ const TechStack = () => {
                             className="mt-6 md:mt-8 font-sans text-sm md:text-base text-white/55 leading-7 md:leading-8 max-w-sm"
                         >
                             <p>
-                                An ecosystem of tools and architectures mastered for building scalable, intelligent, and high-performance digital solutions. Full engineering proficiency.
+                                Tools I use to build prototypes, automate workflows, integrate AI, analyze data, and ship working solutions.
                             </p>
                         </Gsap.div>
                     </div>

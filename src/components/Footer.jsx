@@ -71,7 +71,7 @@ const Footer = memo(function Footer() {
         >
           <div className="w-2 h-2 bg-lime-400 rounded-[2px] animate-pulse" />
           <span className="font-mono text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] md:tracking-[0.26em] text-white/40">
-            {'// INITIALIZE_CONTACT'}
+            05 - Contact
           </span>
           <div className="flex-1 h-[1px] bg-white/10" />
         </Gsap.div>
@@ -83,11 +83,11 @@ const Footer = memo(function Footer() {
           <div className="lg:w-1/2 flex flex-col justify-between">
             <div>
               <h2 className="text-4xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.95] sm:leading-[0.9] text-white mb-6">
-                LET'S <br />
-                <span className="text-lime-400 transform inline-block italic pr-4">CONNECT.</span>
+                HAVE AN <br />
+                <span className="text-lime-400 transform inline-block italic pr-4">IDEA?</span>
               </h2>
               <p className="font-sans text-sm md:text-base text-white/60 max-w-md leading-7 md:leading-8">
-                Feel free to reach out for collaborations, system architecture discussions, or just to say hello. Always open to exploring new opportunities.
+                「こんなこと、できる？」という段階からでも大丈夫です。アイデアや業務上の課題を整理し、小さく形にするところからご相談いただけます。
               </p>
             </div>
           </div>
@@ -100,10 +100,10 @@ const Footer = memo(function Footer() {
               <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.18em] md:tracking-[0.24em] mb-4 border-l-2 border-white/20 pl-3">Sitemap</span>
 
               {[
-                { label: 'About', id: 'about-section' },
+                { label: 'What I Do', id: 'capabilities-section' },
                 { label: 'Projects', id: 'project-section' },
-                { label: 'Experience', id: 'experience-section' },
-                { label: 'Capabilities', id: 'capabilities-section' }
+                { label: 'About', id: 'about-section' },
+                { label: 'Skills', id: 'tech-stack-section' }
               ].map((item) => (
                 <button
                   key={item.label}
@@ -183,7 +183,7 @@ const Footer = memo(function Footer() {
           </div>
 
           <div className="font-mono text-[10px] md:text-xs text-white/40 uppercase tracking-[0.14em] md:tracking-[0.2em] text-center md:text-right">
-            &copy; {new Date().getFullYear()} ZICKRIAN. ALL RIGHTS RESERVED.
+            &copy; {new Date().getFullYear()} MASAHITO KURAMOCHI. ALL RIGHTS RESERVED.
           </div>
         </div>
 
