@@ -1,4 +1,6 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" fill="black"/>
-  <path d="M120 120H392V180L200 332H392V392H120V332L312 180H120V120Z" fill="#a3e635"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#0A0A0A"></rect>
+  <text x="32" y="39" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#A3E635" letter-spacing="-1">
+    MK
+  </text>
 </svg>

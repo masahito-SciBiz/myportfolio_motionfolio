@@ -71,7 +71,7 @@ const AboutSection = memo(function AboutSection() {
                 <picture>
                   <source srcSet="/profilee.webp" type="image/webp" />
                   <img
-                    src="/profilee.webp"
+                    src="/profile.jpeg"
                     alt="Masahito Kuramochi"
                     loading="lazy"
                     decoding="async"

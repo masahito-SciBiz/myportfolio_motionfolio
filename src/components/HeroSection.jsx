@@ -1,6 +1,6 @@
 import { memo, useRef, useState, useEffect } from 'react';
 import { Gsap, useGsapReducedMotion, useGsapScroll, useGsapTransform } from '../utils/gsapAnimate';
-import { Terminal, Code2, Database, Cpu, Download, ArrowUpRight } from 'lucide-react';
+import { Terminal, Code2, Database, Cpu, ArrowUpRight } from 'lucide-react';
 
 // Shared Intl formatter — created once, reused on every tick
 const jakartaFormatter = new Intl.DateTimeFormat('en-US', {
@@ -277,13 +277,26 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           >
             PROJECTS <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
-          <a
-            href="/cv.pdf"
-            download
+          <button
+            onClick={() => {
+              const target = document.getElementById('contact-section');
+              if (!target) return;
+
+              if (window.lenisInstance && typeof window.lenisInstance.scrollTo === 'function') {
+                window.lenisInstance.scrollTo(target);
+                return;
+              }
+
+              target.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="group flex items-center gap-2 bg-transparent text-black border-2 border-black px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider hover:bg-black hover:text-lime-400 transition-all duration-300"
           >
-            Download CV <Download size={16} className="group-hover:translate-y-0.5 transition-transform" />
-          </a>
+            CONTACT
+            <ArrowUpRight
+              size={16}
+              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+            />
+          </button>
         </Gsap.div>
 
 

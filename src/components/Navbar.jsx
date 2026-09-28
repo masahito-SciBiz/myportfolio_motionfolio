@@ -5,12 +5,10 @@ import Magnetic from './Magnetic';
 import { exponentialEaseOut } from '../utils/easing';
 
 const NAV_ITEMS = [
+  { label: 'What I Do', sectionId: 'capabilities-section' },
+  { label: 'Projects', sectionId: 'project-section' },
   { label: 'About', sectionId: 'about-section' },
-  { label: 'Logs', sectionId: 'project-section' },
-  { label: 'Work', sectionId: 'experience-section' },
-  { label: 'Stack', sectionId: 'tech-stack-section' },
-  { label: 'Stats', sectionId: 'github-stats-section' },
-  { label: 'Skills', sectionId: 'capabilities-section' },
+  { label: 'Skills', sectionId: 'tech-stack-section' },
 ];
 
 const DARK_SECTION_IDS = ['project-section', 'tech-stack-section', 'github-stats-section', 'contact-section'];
@@ -196,7 +194,7 @@ const Navbar = memo(function Navbar() {
                 onClick={() => scrollTo('contact-section')}
                 className={`w-full max-w-md mx-auto mt-6 h-12 rounded-full text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-center gap-2 shadow-[0_10px_24px_rgba(0,0,0,0.16)] ${isOnDarkSection ? 'bg-white text-black' : 'bg-black text-white'}`}
               >
-                Let's Talk
+                Contact
                 <ArrowUpRight size={14} />
               </Gsap.button>
 
@@ -242,7 +240,7 @@ const Navbar = memo(function Navbar() {
             className={`group relative overflow-hidden flex items-center gap-3 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-[0.12em] md:tracking-[0.16em] hover:shadow-[0_0_30px_rgba(163,230,53,0.3)] transition-all duration-500 ${isOnDarkSection ? 'bg-white text-black' : 'bg-black text-white'}`}
           >
             {/* Core Label */}
-            <span className="relative z-10 pl-2">Let's Talk</span>
+            <span className="relative z-10 pl-2">Contact</span>
 
             {/* Glowing Icon Container */}
             <div className="relative z-10 w-7 h-7 bg-lime-400 rounded-full flex items-center justify-center text-black group-hover:scale-110 transition-transform duration-300">
