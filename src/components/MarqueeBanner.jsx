@@ -13,7 +13,7 @@ const skills = [
 const MarqueeBanner = memo(function MarqueeBanner() {
   return (
     <div className="relative z-20 sm:-rotate-[0.8deg] sm:scale-[1.02] cursor-default select-none">
-      <div className="bg-black shadow-[0_0_40px_rgba(163,230,53,0.08)]">
+      <div className="bg-black shadow-[0_0_40px_rgba(59,130,246,0.08)]">
 
         {/* ── Row 1: Solid Lime Text, scrolling left ── */}
         <div className="py-4 md:py-6 overflow-hidden relative group border-b border-neutral-800/60">
@@ -26,7 +26,7 @@ const MarqueeBanner = memo(function MarqueeBanner() {
                 {skills.map((skill, j) => (
                   <span key={j} className="flex items-center gap-6 md:gap-14">
                     <span
-                      className="text-blue-500 hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(163,230,53,0.6)]"
+                      className="text-blue-500 hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(59,130,246,0.6)]"
                     >
                       {skill}
                     </span>

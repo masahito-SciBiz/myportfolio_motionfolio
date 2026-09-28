@@ -83,7 +83,7 @@ const Preloader = ({ onComplete }) => {
                 </Gsap.p>
 
                 {/* ASCII Art Container */}
-                <div className="text-blue-500 font-mono text-[10px] sm:text-xs md:text-sm leading-[1.1] md:leading-none whitespace-pre text-center md:text-left select-none overflow-hidden drop-shadow-[0_0_8px_rgba(163,230,53,0.5)]">
+                <div className="text-blue-500 font-mono text-[10px] sm:text-xs md:text-sm leading-[1.1] md:leading-none whitespace-pre text-center md:text-left select-none overflow-hidden drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">
                     {(() => {
                         const width = typeof window !== 'undefined' && window.innerWidth < 768 ? 20 : 40;
                         const filled = Math.floor((progress / 100) * width);

@@ -27,7 +27,7 @@ const AboutSection = memo(function AboutSection() {
 
       {/* Ambient background glows */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute right-0 top-1/4 w-[520px] h-[520px] bg-lime-300/[0.07] rounded-full blur-[110px]" />
+        <div className="absolute right-0 top-1/4 w-[520px] h-[520px] bg-blue-300/[0.07] rounded-full blur-[110px]" />
         <div className="absolute -left-24 bottom-0 w-[380px] h-[380px] bg-black/[0.03] rounded-full blur-[100px]" />
       </div>
 
@@ -41,7 +41,7 @@ const AboutSection = memo(function AboutSection() {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-3 mb-16 md:mb-20"
         >
-          <span className="w-[6px] h-[6px] rounded-full bg-lime-500 shrink-0" />
+          <span className="w-[6px] h-[6px] rounded-full bg-blue-500 shrink-0" />
           <span className="font-mono text-[10px] md:text-[11px] font-bold uppercase tracking-[0.24em] text-black/32">
             03 - About
           </span>
@@ -95,7 +95,7 @@ const AboutSection = memo(function AboutSection() {
               <div className="bg-white border border-black/[0.08] rounded-[3px] py-3.5 px-4">
                 <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-black/32 mb-1.5">Status</p>
                 <div className="flex items-center gap-2">
-                  <span className="w-[6px] h-[6px] rounded-full bg-lime-500 shrink-0" />
+                  <span className="w-[6px] h-[6px] rounded-full bg-blue-500 shrink-0" />
                   <span className="text-[13px] font-bold text-black">Available</span>
                 </div>
               </div>
