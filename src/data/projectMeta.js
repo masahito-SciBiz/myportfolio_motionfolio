@@ -5,7 +5,7 @@ export const PROJECT_META = [
     title: "AI Conversation Prototype",
     category: "Client Project / AI Prototype",
     color: "bg-blue-500",
-    img: "",
+    img: "/projects/portfolio_project-01.jpg",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const PROJECT_META = [
     title: "Inquiry Workflow Automation",
     category: "Own Project / Automation",
     color: "bg-blue-500",
-    img: "",
+    img: "/projects/portfolio_project-02.jpg",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const PROJECT_META = [
     title: "AI Journal Prototype",
     category: "Own Project / AI App",
     color: "bg-blue-500",
-    img: "",
+    img: "/projects/portfolio_project-03.jpg",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export const PROJECT_META = [
     title: "App Management PWA",
     category: "Own Project / Web App",
     color: "bg-blue-500",
-    img: "",
+    img: "/projects/portfolio_project-04.jpg",
   },
 ];  
 
