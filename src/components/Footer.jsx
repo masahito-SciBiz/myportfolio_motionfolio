@@ -119,6 +119,33 @@ const Footer = memo(function Footer() {
               ))}
             </div>
 
+            <div className="flex flex-col gap-4 min-w-[220px]">
+              <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.18em] md:tracking-[0.24em] mb-4 border-l-2 border-lime-400 pl-3">
+                Contact
+              </span>
+
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf5ve-BWDnLYohZ2dzTSa1wrpFs3dJx87ssP3vkfU_dfPIcZg/viewform?usp=header"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between border border-white/10 bg-[#111111] hover:bg-lime-400 hover:border-lime-400 transition-colors duration-300 p-4"
+              >
+                <div className="flex flex-col gap-1">
+                  <span className="font-mono text-xs md:text-sm font-bold uppercase text-white/80 group-hover:text-black tracking-[0.14em] md:tracking-[0.2em] transition-colors">
+                    Contact
+                  </span>
+                  <span className="text-xs text-white/40 group-hover:text-black/60 transition-colors">
+                    お問い合わせ・ご相談
+                  </span>
+                </div>
+
+                <ArrowUpRight
+                  size={18}
+                  className="text-white/20 group-hover:text-black transition-colors"
+                />
+              </a>
+            </div>
+
             {/* Connect Links */}
             <div className="flex flex-col gap-4 min-w-[200px]">
               <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.18em] md:tracking-[0.24em] mb-4 border-l-2 border-lime-400 pl-3">Networks</span>
