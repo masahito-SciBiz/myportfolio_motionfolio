@@ -4,7 +4,7 @@ export const PROJECT_META = [
     slug: "ai-conversation-prototype",
     title: "AI Conversation Prototype",
     category: "Client Project / AI Prototype",
-    color: "bg-lime-400",
+    color: "bg-blue-500",
     img: "",
   },
 ];  

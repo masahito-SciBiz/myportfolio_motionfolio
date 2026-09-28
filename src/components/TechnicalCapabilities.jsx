@@ -94,10 +94,10 @@ const TechnicalCapabilities = memo(function TechnicalCapabilities() {
               >
                 {/* Number & Icon Row */}
                 <div className="flex justify-between items-start relative z-10">
-                  <span className={`font-mono text-xs md:text-sm font-bold text-black group-hover/cell:text-lime-400 transition-colors duration-500 tracking-[0.12em] md:tracking-[0.16em] ${isActive ? '!text-lime-400' : ''}`}>
+                  <span className={`font-mono text-xs md:text-sm font-bold text-black group-hover/cell:text-blue-500 transition-colors duration-500 tracking-[0.12em] md:tracking-[0.16em] ${isActive ? '!text-blue-500' : ''}`}>
                     0{i + 1}
                   </span>
-                  <cap.icon className={`w-5 h-5 md:w-8 md:h-8 text-black group-hover/cell:text-lime-400 transition-colors duration-500 ${isActive ? '!text-lime-400' : ''}`} strokeWidth={2} />
+                  <cap.icon className={`w-5 h-5 md:w-8 md:h-8 text-black group-hover/cell:text-blue-500 transition-colors duration-500 ${isActive ? '!text-blue-500' : ''}`} strokeWidth={2} />
                 </div>
 
                 {/* Center massive number watermark — hidden on mobile */}
@@ -107,19 +107,19 @@ const TechnicalCapabilities = memo(function TechnicalCapabilities() {
 
                 {/* Title & Desc Row */}
                 <div className="relative z-10 mt-auto">
-                  <h3 className={`text-base md:text-2xl lg:text-3xl font-black uppercase text-black tracking-tight leading-[1.1] mb-1 md:mb-2 group-hover/cell:text-lime-400 transition-colors duration-500 ${isActive ? '!text-lime-400' : ''}`}>
+                  <h3 className={`text-base md:text-2xl lg:text-3xl font-black uppercase text-black tracking-tight leading-[1.1] mb-1 md:mb-2 group-hover/cell:text-blue-500 transition-colors duration-500 ${isActive ? '!text-blue-500' : ''}`}>
                     {cap.title}
                   </h3>
 
                   {/* Desktop Hover Description */}
                   <div className={`hidden md:block h-0 opacity-0 group-hover/cell:h-[80px] group-hover/cell:opacity-100 group-hover/cell:mt-4 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isActive ? '!h-[80px] !opacity-100 !mt-4' : ''}`}>
-                    <p className={`text-sm border-l-2 border-lime-400 pl-4 text-white/80 font-mono leading-7 transform translate-y-4 group-hover/cell:translate-y-0 transition-transform duration-500 delay-100 ${isActive ? '!translate-y-0' : ''}`}>
+                    <p className={`text-sm border-l-2 border-blue-500 pl-4 text-white/80 font-mono leading-7 transform translate-y-4 group-hover/cell:translate-y-0 transition-transform duration-500 delay-100 ${isActive ? '!translate-y-0' : ''}`}>
                       {cap.desc}
                     </p>
                   </div>
 
                   {/* Mobile Always Visible Description — smaller text */}
-                  <p className={`md:hidden mt-1 text-[11px] border-l-2 border-black group-hover/cell:border-lime-400 pl-3 text-black/70 group-hover/cell:text-white/80 font-mono leading-5 transition-colors duration-500 ${isActive ? '!border-lime-400 !text-white/80' : ''}`}>
+                  <p className={`md:hidden mt-1 text-[11px] border-l-2 border-black group-hover/cell:border-blue-500 pl-3 text-black/70 group-hover/cell:text-white/80 font-mono leading-5 transition-colors duration-500 ${isActive ? '!border-blue-500 !text-white/80' : ''}`}>
                     {cap.desc}
                   </p>
                 </div>

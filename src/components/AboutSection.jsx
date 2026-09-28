@@ -62,7 +62,7 @@ const AboutSection = memo(function AboutSection() {
           >
             {/* Profile image with decorative offset border */}
             <div className="relative">
-              <div className="absolute -top-2.5 -left-2.5 w-full h-full border border-lime-400/25 rounded-[4px] pointer-events-none" />
+              <div className="absolute -top-2.5 -left-2.5 w-full h-full border border-blue-500/25 rounded-[4px] pointer-events-none" />
 
               <div className="relative aspect-[4/5] w-full rounded-[4px] overflow-hidden border border-black/[0.07] bg-black/[0.04] group">
                 {/* Hover desaturation overlay */}

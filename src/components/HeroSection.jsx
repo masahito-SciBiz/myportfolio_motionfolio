@@ -167,7 +167,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           } : { transform: 'translate3d(-50%, -50%, 0)' }}
         />
         <div
-          className="absolute top-1/4 right-[20%] w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] bg-lime-400 rounded-full blur-[90px] lg:blur-[120px] opacity-[0.06]"
+          className="absolute top-1/4 right-[20%] w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] bg-blue-500 rounded-full blur-[90px] lg:blur-[120px] opacity-[0.06]"
           style={enableAmbientMotion && isRevealed ? {
             animation: 'hero-orb-2 12s 2s ease-in-out infinite',
             willChange: 'transform',
@@ -257,7 +257,7 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
           className="flex flex-col items-center gap-2 mt-0"
         >
           <h2 className="text-[clamp(1.35rem,4.2vw,2.25rem)] font-bold text-black/80 tracking-tight flex items-center justify-center flex-wrap gap-2 px-2">
-            「こうなったら <span className="bg-lime-400/30 px-2 rounded-md ring-1 ring-lime-500/20">楽なのに</span>」を、実際に使える仕組みに。
+            「こうなったら <span className="bg-blue-500/30 px-2 rounded-md ring-1 ring-lime-500/20">楽なのに</span>」を、実際に使える仕組みに。
           </h2>
           <p className="font-sans text-base text-black/60 max-w-xl leading-7 mt-2 px-4">
             AI・デジタル活用｜アプリ・業務ツールの試作｜業務自動化｜データ分析
@@ -273,23 +273,19 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
         >
           <button
             onClick={() => document.getElementById('project-section')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group flex items-center gap-2 bg-black text-white px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider hover:bg-lime-400 hover:text-black transition-all duration-300 cursor-pointer"
+            className="group flex items-center gap-2 bg-black text-white px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider hover:bg-blue-500 hover:text-black transition-all duration-300 cursor-pointer"
           >
             PROJECTS <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
           <button
-            onClick={() => {
-              const target = document.getElementById('contact-section');
-              if (!target) return;
-
-              if (window.lenisInstance && typeof window.lenisInstance.scrollTo === 'function') {
-                window.lenisInstance.scrollTo(target);
-                return;
-              }
-
-              target.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="group flex items-center gap-2 bg-transparent text-black border-2 border-black px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider hover:bg-black hover:text-lime-400 transition-all duration-300"
+            onClick={() =>
+              window.open(
+                'https://docs.google.com/forms/d/e/1FAIpQLSf5ve-BWDnLYohZ2dzTSa1wrpFs3dJx87ssP3vkfU_dfPIcZg/viewform?usp=header',
+                '_blank',
+                'noopener,noreferrer'
+              )
+            }
+            className="group flex items-center gap-2 bg-transparent text-black border-2 border-black px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider hover:bg-black hover:text-blue-500 transition-all duration-300"
           >
             CONTACT
             <ArrowUpRight
