@@ -76,6 +76,18 @@ export default function ProjectGallery({ onOpenProject }) {
   }, []);
 
   const projects = PROJECT_META;
+
+  const handleProjectOpen = (project) => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'project_view', {
+        project_name: project.title,
+        project_slug: project.slug,
+      });
+    }
+
+    onOpenProject?.(project);
+  };
+
   const projectCount = projects.length;
 
   useEffect(() => {
@@ -321,10 +333,10 @@ export default function ProjectGallery({ onOpenProject }) {
             <Gsap.div
               key={project.id}
               id={`project-${project.id}`}
-              onClick={() => onOpenProject?.(project)}
+              onClick={() => handleProjectOpen(project)}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => { if (e.key === "Enter") onOpenProject?.(project); }}
+              onKeyDown={(e) => { if (e.key === "Enter") handleProjectOpen(project); }}
               className="project-card group relative w-[80vw] shrink-0 snap-center overflow-hidden rounded-lg border border-white/10 bg-neutral-950 cursor-pointer active:scale-[0.98] transition-transform"
               data-project-index={index}
               style={{ WebkitTapHighlightColor: 'transparent', aspectRatio: '3/4' }}
@@ -433,11 +445,11 @@ export default function ProjectGallery({ onOpenProject }) {
             <Gsap.div
               key={project.id}
               id={`project-${project.id}`}
-              onClick={() => onOpenProject?.(project)}
+              onClick={() => handleProjectOpen(project)}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === "Enter") onOpenProject?.(project);
+                if (e.key === "Enter") handleProjectOpen(project);
               }}
               className="project-card group relative h-[70vh] w-[45vw] shrink-0 overflow-hidden rounded-[4px] border border-white/10 bg-neutral-900 transition-all duration-500 hover:border-blue-400/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.1)] active:scale-[0.98] cursor-pointer"
               data-project-index={index}
