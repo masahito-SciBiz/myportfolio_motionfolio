@@ -370,15 +370,7 @@ export default function ProjectGallery({ onOpenProject }) {
                   </span>
                 </div>
                 <h3 className="text-2xl font-black uppercase text-white tracking-tight leading-[1.05]">
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
-                      {project.titleJa}
-                    </h3>
-
-                    <p className="mt-1 font-mono text-[10px] md:text-xs uppercase tracking-[0.14em] text-black/40">
-                      {project.titleEn}
-                    </p>
-                  </div>
+                  {project.title}
                 </h3>
 
                 {/* CTA arrow */}

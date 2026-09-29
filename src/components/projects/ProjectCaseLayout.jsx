@@ -1,5 +1,5 @@
 import { Gsap } from "../../utils/gsapAnimate";
-import { ArrowUpRight, Github, Globe } from "lucide-react";
+import { ArrowUpRight, Github, Globe, ChevronDown } from "lucide-react";
 
 // Helper: inject Cloudinary automatic format & quality + width
 function cloudinarySrc(originalUrl, width) {
@@ -19,6 +19,16 @@ const TechBadge = ({ children }) => (
     {children}
   </span>
 );
+
+const handleScrollDown = () => {
+  const nextSection = document.getElementById("project-detail-content");
+  if (!nextSection) return;
+
+  nextSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 export default function ProjectCaseLayout({
   project,
@@ -53,7 +63,7 @@ export default function ProjectCaseLayout({
 
       <div className="flex-1 overflow-y-auto">
         {/* ── Hero Section ──────────────────────── */}
-        <section className="max-w-4xl mx-auto text-center flex flex-col items-center px-6 md:px-10 pt-16 md:pt-20 pb-12">
+        <section className="relative min-h-full max-w-4xl mx-auto text-center flex flex-col items-center px-6 md:px-10 pt-16 md:pt-20 pb-24">
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] md:tracking-[0.26em] text-black/40 mb-4">
             Project Case Study
           </p>
@@ -62,19 +72,14 @@ export default function ProjectCaseLayout({
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tighter text-black mb-3"
+            className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tighter text-black mb-6"
           >
-            {project.titleJa}
+            {project.title.split(' ').map((word, i, arr) => (
+              <span key={i} className={i === arr.length - 1 ? "text-transparent" : ""} style={i === arr.length - 1 ? { WebkitTextStroke: '2px black' } : {}}>
+                {word}{i !== arr.length - 1 ? ' ' : ''}
+              </span>
+            ))}
           </Gsap.h1>
-
-          <Gsap.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-            className="font-mono text-xs md:text-sm uppercase tracking-[0.16em] text-black/40 mb-6"
-          >
-            {project.titleEn}
-          </Gsap.p>
 
           <Gsap.p
             initial={{ opacity: 0, y: 18 }}
@@ -104,6 +109,22 @@ export default function ProjectCaseLayout({
               </a>
             )}
           </Gsap.div>
+
+          <button
+            onClick={handleScrollDown}
+            className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-black/40 hover:text-blue-500 transition-colors"
+            aria-label="Scroll to project details"
+          >
+            <span className="font-mono text-[9px] uppercase tracking-[0.2em]">
+              Scroll
+            </span>
+            <ChevronDown
+              size={24}
+              strokeWidth={1.75}
+              className="animate-bounce"
+            />
+          </button>
+
         </section>
 
         {/* ── Main Cover Image ──────────────────────── */}
@@ -124,7 +145,7 @@ export default function ProjectCaseLayout({
                     cloudinarySrc(project.heroImg, 1200) + ' 1200w',
                   ].join(', ')}
                   sizes="(max-width: 768px) 100vw, 1152px"
-                  alt={project.titleJa}
+                  alt={project.title}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-contain"
@@ -134,7 +155,10 @@ export default function ProjectCaseLayout({
           </section>
         )}
 
-        <section className="max-w-5xl mx-auto px-6 md:px-10 pb-24">
+        <section
+          id="project-detail-content"
+          className="max-w-5xl mx-auto px-6 md:px-10 pb-24"
+        >
 
           {/* Custom Section Block */}
           {preFeatureSection}
