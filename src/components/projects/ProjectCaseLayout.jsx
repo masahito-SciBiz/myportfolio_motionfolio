@@ -72,14 +72,19 @@ export default function ProjectCaseLayout({
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tighter text-black mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tighter text-black mb-3"
           >
-            {project.title.split(' ').map((word, i, arr) => (
-              <span key={i} className={i === arr.length - 1 ? "text-transparent" : ""} style={i === arr.length - 1 ? { WebkitTextStroke: '2px black' } : {}}>
-                {word}{i !== arr.length - 1 ? ' ' : ''}
-              </span>
-            ))}
+            {project.titleJa}
           </Gsap.h1>
+
+          <Gsap.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+            className="font-mono text-xs md:text-sm uppercase tracking-[0.16em] text-black/40 mb-6"
+          >
+            {project.titleEn}
+          </Gsap.p>
 
           <Gsap.p
             initial={{ opacity: 0, y: 18 }}
@@ -145,7 +150,7 @@ export default function ProjectCaseLayout({
                     cloudinarySrc(project.heroImg, 1200) + ' 1200w',
                   ].join(', ')}
                   sizes="(max-width: 768px) 100vw, 1152px"
-                  alt={project.title}
+                  alt={project.titleJa}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-contain"

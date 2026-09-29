@@ -2,7 +2,8 @@ export const PROJECT_META = [
   {
     id: 1,
     slug: "ai-conversation-prototype",
-    title: "AI Conversation Prototype",
+    titleJa: "AI会話プロトタイプ",
+    titleEn: "AI Conversation Prototype",
     category: "Client Project / AI Prototype",
     color: "bg-blue-500",
     img: "/projects/portfolio_project-01.jpg",
@@ -10,7 +11,8 @@ export const PROJECT_META = [
   {
     id: 2,
     slug: "inquiry-workflow-automation",
-    title: "Inquiry Workflow Automation",
+    titleJa: "問い合わせ対応自動化",
+    titleEn: "Inquiry Workflow Automation",
     category: "Own Project / Automation",
     color: "bg-blue-500",
     img: "/projects/portfolio_project-02.jpg",
@@ -18,7 +20,8 @@ export const PROJECT_META = [
   {
     id: 3,
     slug: "ai-journal-prototype",
-    title: "AI Journal Prototype",
+    titleJa: "AI日記アプリ試作",
+    titleEn: "AI Journal Prototype",
     category: "Own Project / AI App",
     color: "bg-blue-500",
     img: "/projects/portfolio_project-03.jpg",
@@ -26,7 +29,8 @@ export const PROJECT_META = [
   {
     id: 4,
     slug: "app-management-pwa",
-    title: "App Management PWA",
+    titleJa: "アプリ管理PWA",
+    titleEn: "App Management PWA",
     category: "Own Project / Web App",
     color: "bg-blue-500",
     img: "/projects/portfolio_project-04.jpg",
