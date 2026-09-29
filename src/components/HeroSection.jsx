@@ -278,13 +278,19 @@ const HeroSection = memo(function HeroSection({ isRevealed = true }) {
             PROJECTS <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
           <button
-            onClick={() =>
+            onClick={() => {
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'contact_click', {
+                  contact_location: 'hero',
+                });
+              }
+
               window.open(
                 'https://docs.google.com/forms/d/e/1FAIpQLSf5ve-BWDnLYohZ2dzTSa1wrpFs3dJx87ssP3vkfU_dfPIcZg/viewform?usp=header',
                 '_blank',
                 'noopener,noreferrer'
-              )
-            }
+              );
+            }}
             className="group flex items-center gap-2 bg-transparent text-black border-2 border-black px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider hover:bg-black hover:text-blue-500 transition-all duration-300"
           >
             CONTACT
