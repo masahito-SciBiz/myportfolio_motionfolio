@@ -1,5 +1,5 @@
 import { Gsap } from "../../utils/gsapAnimate";
-import { ArrowUpRight, Github, Globe, ChevronDown } from "lucide-react";
+import { ArrowUpRight, Github, Globe } from "lucide-react";
 
 // Helper: inject Cloudinary automatic format & quality + width
 function cloudinarySrc(originalUrl, width) {
@@ -19,16 +19,6 @@ const TechBadge = ({ children }) => (
     {children}
   </span>
 );
-
-const handleScrollDown = () => {
-  const nextSection = document.getElementById("project-detail-content");
-  if (!nextSection) return;
-
-  nextSection.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-};
 
 export default function ProjectCaseLayout({
   project,
@@ -63,7 +53,7 @@ export default function ProjectCaseLayout({
 
       <div className="flex-1 overflow-y-auto">
         {/* ── Hero Section ──────────────────────── */}
-        <section className="relative min-h-full max-w-4xl mx-auto text-center flex flex-col items-center px-6 md:px-10 pt-16 md:pt-20 pb-24">
+        <section className="max-w-4xl mx-auto text-center flex flex-col items-center px-6 md:px-10 pt-16 md:pt-20 pb-12">
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] md:tracking-[0.26em] text-black/40 mb-4">
             Project Case Study
           </p>
@@ -114,22 +104,6 @@ export default function ProjectCaseLayout({
               </a>
             )}
           </Gsap.div>
-
-          <button
-            onClick={handleScrollDown}
-            className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-black/40 hover:text-blue-500 transition-colors"
-            aria-label="Scroll to project details"
-          >
-            <span className="font-mono text-[9px] uppercase tracking-[0.2em]">
-              Scroll
-            </span>
-            <ChevronDown
-              size={24}
-              strokeWidth={1.75}
-              className="animate-bounce"
-            />
-          </button>
-
         </section>
 
         {/* ── Main Cover Image ──────────────────────── */}
@@ -160,10 +134,7 @@ export default function ProjectCaseLayout({
           </section>
         )}
 
-        <section
-          id="project-detail-content"
-          className="max-w-5xl mx-auto px-6 md:px-10 pb-24"
-        >
+        <section className="max-w-5xl mx-auto px-6 md:px-10 pb-24">
 
           {/* Custom Section Block */}
           {preFeatureSection}
